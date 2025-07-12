@@ -1,0 +1,179 @@
+---
+title: "Analysis of one way/two-way classification models"
+author: "Manoj C. Patil"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+
+# **Data: potato.mtw**
+
+The University of Wisconsin conducted a study of potatoes in which rot-causing bacteria were injected into the potatoes in varying amounts. The potatoes were left for five days at various temperatures and in atmospheres with different oxygen contents. The diameter of the rotted area was measured in mm.
+
+```{r,echo=FALSE,warnings=FALSE}
+library(flextable)
+# Create the table as a data frame
+rot_table <- data.frame(
+  Column = c("C1", "C2", "C3", "C4"),
+  Name = c("Bacteria", "Temp", "Oxygen", "Rot"),
+  Count = c(54, 54, 54, 54),
+  Description = c(
+    "Amount of bacteria injected into the potato: 1 = Low, 2 = Medium, 3 = High",
+    "Temperature during storage: 1 = 10°C, 2 = 16°C",
+    "Amt of oxygen during storage: 1 = 2%, 2 = 6%, 3 = 10%",
+    "Diameter of rotted area in mm"
+  )
+)
+
+# Render as autofitting flextable
+flextable(rot_table) |>
+  autofit()
+```
+
+
+
+
+Analyze the data using appropriate design.
+
+## Step 1: Load and Prepare Data
+```{r}
+library('readxl')
+library(flextable)
+# Assuming the data is in a CSV file
+data <- read_excel("B1Datasets.xlsx",sheet='Potato')  # Or use read.table()
+
+# Convert factors
+data$Bacteria <- factor(data$Bacteria, levels = 1:3, labels = c("Low", "Medium", "High"))
+data$Temp <- factor(data$Temp, levels = 1:2, labels = c("10C", "16C"))
+data$Oxygen <- factor(data$Oxygen, levels = 1:3, labels = c("2%", "6%", "10%"))
+```
+
+## Step 2: Explore the Data
+```{r}
+summary(data)
+#table(data$Bacteria, data$Temp, data$Oxygen)
+boxplot(Rot ~ Bacteria , data = data,
+        las = 2, main = "Boxplot of Rot by Bacteria")
+boxplot(Rot ~ Temp, data = data,
+        las = 2, main = "Boxplot of Rot by Temp")
+boxplot(Rot ~ Oxygen, data = data,
+        las = 2, main = "Boxplot of Oxygen")
+```
+
+### Conclusions: 
+
+Based on the summary statistics and boxplots, the response variable Rot varies across the levels of Bacteria, Temp, and Oxygen. The mean Rot is 9.407, with values ranging from 0 to 26. The boxplots suggest that Bacteria and Temp may have noticeable effects on Rot, as the spread and median values differ across their levels. For Oxygen, the differences in Rot appear less pronounced, indicating a potentially weaker effect. These visualizations suggest that Bacteria and Temp are likely to be significant predictors, while Oxygen may have a more subtle influence.
+
+
+## Step 3: Fit Full Factorial ANOVA Model
+```{r}
+# 3-way factorial design
+model <- aov(Rot ~ Bacteria * Temp * Oxygen, data = data)
+summary(model)
+```
+
+### Conclusions: 
+
+The ANOVA results indicate that Bacteria (p = 3.34e-05) and Temp (p = 6.60e-07) have highly significant main effects on Rot, suggesting that these factors strongly influence the response variable. The interaction between Bacteria and Temp is also significant (p = 0.0498), indicating that the effect of Bacteria on Rot depends on the level of Temp. However, Oxygen (p = 0.1387) and its interactions (Bacteria:Oxygen, Temp:Oxygen, and Bacteria:Temp:Oxygen) are not statistically significant (p > 0.05), suggesting that Oxygen does not have a substantial impact on Rot in this model, nor do its interactions with other factors.
+
+## Step 4: Check Assumptions
+```{r,warning=FALSE}
+# Residual diagnostics
+par(mfrow = c(2, 2))
+plot(model)
+
+# Normality test
+shapiro.test(residuals(model))
+
+# Homogeneity of variances
+library(car)
+leveneTest(Rot ~ Bacteria * Temp * Oxygen, data = data)
+```
+
+### Conclusions: Write some conclusions here
+
+## Step 5: Interpret Significant Effects
+```{r}
+# Use interaction plots to visualize interactions
+interaction.plot(data$Bacteria, data$Temp, data$Rot, col = c("red", "blue"))
+interaction.plot(data$Oxygen, data$Temp, data$Rot, col = c("green", "orange", "purple"))
+
+# If needed, do post-hoc comparisons
+library(emmeans)
+emmeans(model, pairwise ~ Bacteria | Temp * Oxygen)
+```
+
+### Conclusions: 
+
+The Shapiro-Wilk test (W = 0.98401, p = 0.6845) indicates that the residuals of the model are approximately normally distributed, as the p-value is greater than 0.05, satisfying the normality assumption for ANOVA. Levene’s test (F = 0.5682, p = 0.8933) suggests that the variances across groups are homogeneous, as the p-value is well above 0.05. These results confirm that the assumptions of normality and homogeneity of variances are met, supporting the validity of the ANOVA results.
+
+## Step 6: Simplify Model (if interactions are not significant)
+```{r}
+# Fit reduced model if interactions are not significant
+model_reduced <- aov(Rot ~ Bacteria + Temp + Oxygen, data = data)
+summary(model_reduced)
+
+# Compare models
+anova(model_reduced, model)
+```
+
+## Step 7: Report Final Model
+```{r}
+# Final model summary and estimated effects
+summary(model)
+```
+
+### Conclusions: 
+
+The full factorial model reveals that Bacteria and Temp are the primary factors influencing Rot, with a significant interaction between them. The non-significant interactions involving Oxygen suggest that it does not substantially modify the effects of Bacteria or Temp. The model explains a significant portion of the variance in Rot (based on the Sum of Squares for Bacteria and Temp), and the significant Bacteria:Temp interaction indicates that the combined effect of these factors should be considered when interpreting their impact. For practical applications, focusing on optimizing Bacteria and Temp levels could effectively control Rot, while Oxygen levels may be less critical.
+
+
+# **Data: pancake.mtw**
+
+Data from an experiment designed to study the effects of two factors on the quality of pancakes. The two factors were the amount of whey and whether or not a supplement was used. There are four levels of whey and two levels of supplement giving a total of 4 x 2 = 8 treatment combinations or cells. Three pancakes were baked using each treatment combination. Each pancake was then rated by an expert; the three ratings were averaged to give one overall quality rating. The higher the quality rating, the better the pancake. This was done three times for each treatment combination, giving a total of 3 x 8 = 24 overall quality ratings.
+
+```{r,echo=FALSE,warnings=FALSE}
+# Create the data frame
+supp_table <- data.frame(
+  Column = c("C1", "C2", "C3"),
+  Name = c("Supplement", "Whey", "Quality"),
+  Count = c(24, 24, 24),
+  Description = c(
+    "Supplement used = 1 or not used = 0",
+    "Level of whey (0%, 10%, 20%, 30%)",
+    "Pancake quality"
+  )
+)
+
+# Render the table with autofit
+flextable(supp_table) |>
+  autofit()
+```
+
+Analyze the data.
+
+# Analyze the data in **student1\voice.mtw** worksheet in Minitab.
+
+# **ToothGrowth datasets in R** (The Effect of Vitamin C on Tooth Growth in Guinea Pigs)
+
+The response is the length of odontoblasts (cells responsible for tooth growth) in 60 guinea pigs. Each animal received one of three dose levels of vitamin C (0.5, 1, and 2 mg/day) by one of two delivery methods, (orange juice or ascorbic acid (a form of vitamin C and coded as VC). A data frame with 60 observations on 3 variables.
+
+
+```{r,echo=FALSE,warnings=FALSE}
+# Create data frame
+tooth_table <- data.frame(
+  Column = c("len", "supp", "dose"),
+  Type = c("numeric", "factor", "numeric"),
+  Description = c(
+    "Tooth length",
+    "Supplement type (VC or OJ)",
+    "Dose in milligrams/day"
+  )
+)
+
+# Render autofitting flextable
+flextable(tooth_table) |>
+  autofit()
+```
+
+

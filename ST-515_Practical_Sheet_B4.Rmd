@@ -1,0 +1,47 @@
+---
+title: "ST-515 (A) Practical Sheet"
+author: "Manoj C. Patil"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+
+## Practical Sheet (B4)
+
+**Topic: Analysis of balanced incomplete block design**
+
+1. An engineer studies the mileage performance characteristics of 5 types of Gasoline additives. Cars are used as blocks. However because of a time constraint an incomplete block design is used. The runs of experiment with 5 blocks are as follows.
+
+| Additive | Car 1 | Car 2 | Car 3 | Car 4 | Car 5 |
+| --- | --- | --- | --- | --- | --- |
+| 1 |  | 17 | 14 | 13 | 12 |
+| 2 | 14 | 14 |  | 13 | 10 |
+| 3 | 12 |  | 13 | 12 | 9 |
+| 4 | 13 | 11 | 11 | 12 |  |
+| 5 | 11 | 12 | 10 |  | 8 |
+
+a. Obtain BLUE of the following parametric functions and estimate their variance.
+b. Any two contrast in treatment effects (additive).
+c. Any two contrast in block effects (Car).
+d. Split the total sum of squares in three components as follows:
+   - TSS = SS(additive)_adjusted + SS(Car)_unadjusted + SSE
+   - TSS = SS(additive)_unadjusted + SS(Car)_adjusted + SSE
+   Test the related hypothesis and draw appropriate conclusions.
+
+2. Seven different hardwood concentrations are being studied to determine their effect on the strength on the paper produced. However the pilot plant can only produce three runs each day. As days may differ he analyst uses the days as blocks. The strength of paper for the designed experiment is recorded and the results are as follows.
+
+| Hardwood concentration (%) | Day 1 | Day 2 | Day 3 | Day 4 | Day 5 | Day 6 | Day 7 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 2 | 114 |  |  |  | 120 |  | 117 |
+| 4 | 126 | 120 |  |  |  | 119 |  |
+| 6 |  | 137 | 117 |  |  |  | 134 |
+| 8 | 141 |  | 129 | 149 |  |  |  |
+| 10 |  | 145 |  | 150 | 143 |  |  |
+| 12 |  |  | 120 |  | 118 | 123 |  |
+| 14 |  |  |  | 136 |  | 130 | 127 |
+
+a. Test whether the hardwood concentrations affect the strength of paper significantly.
+b. Obtain the average effect of all days on strength of paper. Hence test whether days differ significantly.
+c. Obtain the estimate of difference between effect of any two hardwood concentrations (contrast in treatments) and find the estimate of its variance.
+d. Obtain an estimate of error variance.
+e. Check connectedness, balancedness and orthogonality of the above design.

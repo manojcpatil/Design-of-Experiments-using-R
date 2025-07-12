@@ -1,0 +1,57 @@
+---
+title: "ST-515 (A) Practical Sheet"
+author: "Manoj C. Patil"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+
+## Practical Sheet (B10)
+
+**Topic: Analyzing Central Composite designs**
+
+a. The following data was collected by a chemical engineer. The response y is filtration time, x1 is temperature and x2 is pressure.
+
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| y | 54 | 45 | 32 | 47 | 50 | 53 | 47 | 51 | 41 | 39 | 44 | 42 | 40 |
+| x1 | -1 | -1 | 1 | 1 | -1.414 | 1.414 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| x2 | -1 | 1 | -1 | 1 | 0 | 0 | -1.414 | 1.414 | 0 | 0 | 0 | 0 | 0 |
+
+l. Generate the CCD and analyze the data. What operating conditions would you recommend if the objective is to minimize the filtration time.
+m. Obtain the response surface plot for the fitted model. Also obtain the contour plot.
+n. What operating conditions would you recommend if the objective is to operate the process mean at a mean filtration rate very close to 46.
+
+b. An experiment was conducted to study the response surface relating the strength of bread wrapper stock in grams per square inch to sealing temperature (A), cooling bar temperature (B), and percent polyethylene additive (C). The definition of the design levels is as follows.
+
+x1 = (F-255)/30, x2 = (F-55)/9, x3 = (% polyethylene – 1.1)/0.6
+
+Five levels of each factor are involved in this design. The coded and natural levels are as follows.
+
+|  | -1.682 | -1 | 0 | 1.0 | 1.682 |
+| --- | --- | --- | --- | --- | --- |
+| x1 | 204.5 | 225 | 285.0 | 305.5 |  |
+| x2 | 39.9 | 46 | 55 | 64 | 70.1 |
+| x3 | 0.09 | 0.5 | 1.1 | 1.7 | 2.11 |
+
+| A | B | C | y |
+| --- | --- | --- | --- |
+| -1 | -1 | -1 | 6.6 |
+| 1 | -1 | -1 | 6.9 |
+| -1 | 1 | -1 | 7.9 |
+| 1 | 1 | -1 | 6.1 |
+| -1 | -1 | 1 | 9.2 |
+| 1 | -1 | 1 | 6.8 |
+| -1 | 1 | 1 | 10.4 |
+| 1 | 1 | 1 | 7.3 |
+| -a | 0 | 0 | 9.8 |
+| a | 0 | 0 | 5 |
+| 0 | -a | 0 | 6.9 |
+| 0 | a | 0 | 6.3 |
+| 0 | 0 | -a | 4 |
+| 0 | 0 | a | 8.6 |
+| 0 | 0 | 0 | 10.1, 9.9, 12.2, 9.7, 9.7, 9.6 |
+
+a. Fit the second order response surface function to response Y and analyze the data.
+b. Obtain the stationary point of estimated maximum mean strength of the bread-wrapper.
+c. Draw contour plots. Obtain the canonical form and maximum strength Y at the stationary point.

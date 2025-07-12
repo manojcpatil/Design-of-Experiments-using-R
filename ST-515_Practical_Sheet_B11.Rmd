@@ -1,0 +1,36 @@
+---
+title: "ST-515 (A) Practical Sheet"
+author: "Manoj C. Patil"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+
+## Practical Sheet (B11)
+
+**Topic: Analysis of two-level fractional factorial designs**
+
+a. An article in the journal of quality technology describes the use of a replicated fractional factorial to investigate the effect of five factors on the free height of leaf springs used in an automotive application. The factors are A = furnace temperature, B = heating time, C = transfer time, D = hold down time and E = quench oil temperature. The data are shown below:
+
+| Treatment | (1) | ad | bd | ab | cd | ac | bc | abcd | e | ade | bde | abe | cde | ace | bce | abcde |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Free height 1 | 7.78 | 8.15 | 7.5 | 7.59 | 7.54 | 7.69 | 7.56 | 7.56 | 7.5 | 7.88 | 7.5 | 7.63 | 7.32 | 7.56 | 7.18 | 7.81 |
+| Free height 2 | 7.78 | 8.18 | 7.56 | 7.56 | 8 | 8.09 | 7.52 | 7.81 | 7.25 | 7.88 | 7.56 | 7.75 | 7.44 | 7.69 | 7.18 | 7.5 |
+| Free height 3 | 7.81 | 7.88 | 7.5 | 7.75 | 7.88 | 8.06 | 7.44 | 7.69 | 7.12 | 7.44 | 7.5 | 7.56 | 7.44 | 7.62 | 7.25 | 7.59 |
+
+a. Write out the alias structure for this design. What is the resolution of this design?
+b. Analyze the data. What factors influence the mean free-height?
+c. Calculate the range and standard deviation of the free height for each run. Is there any indication that any of these factors affect variability in the free height?
+d. Is this the best possible design for five factors in 16 runs? Specifically, can you find a fractional design for five factors in 16 runs with a higher resolution than this one?
+
+b. Carbon anode used in a smelting process are baked in a ring furnace. An experiment is run in the furnace to determine which factors influence the weight of packing material that is stuck to the anodes after baking. Six variables are of interest, each at two levels. A 2^6-3 design is run with three replicates. The weight of packing material stuck to the anodes is measured in grams. The data in run order are as follows:
+
+| Treatment | abd | abcdef | be | af | def | cd | ace | bcf |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Replicate 1 | 1320 | 1474 | 1217 | 984 | 765 | 1338 | 1325 | 1275 |
+| Replicate 2 | 1156 | 1164 | 1201 | 826 | 705 | 1254 | 1299 | 976 |
+| Replicate 3 | 913 | 1541 | 890 | 936 | 821 | 1294 | 1253 | 1457 |
+
+a. Verify that the eight runs correspond to a 2^6-3 design. What is the alias structure?
+b. Use the average weight as a response. What factors appear to be influential?
+c. Use the range of the weights as a response. What factors appear to be influential?

@@ -1,0 +1,36 @@
+---
+title: "ST-515 (A) Practical Sheet"
+author: "Manoj C. Patil"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+
+## Practical Sheet (B2)
+
+**Topic: Analysis of two-way classification model with equal observations per cell**
+
+1. The quality control department of a fabric finishing plant is studying the effect of several factors on the dying of cotton synthetic cloth used to manufacture men’s shirt. Three operators and three cycle times were selected and three small specimens of cloth were dyed under each setting condition. The finished cloth is compared to a standard and a numerical score is assigned. The results are as follows.
+
+| Cycle time | Operator 1 | Operator 2 | Operator 3 |
+| --- | --- | --- | --- |
+| 40 | 23, 24, 25 | 27, 28, 26 | 31, 32, 29 |
+| 50 | 36, 35, 36 | 34, 38, 39 | 33, 34, 35 |
+| 60 | 28, 24, 27 | 35, 35, 34 | 26, 27, 25 |
+
+a. Using appropriate model test whether the cycle time affects the dyeing quality of cotton synthetic cloth significantly.
+b. Obtain the Blues of contrast effects of cycle time and operators.
+c. Does the performance of three operators differ significantly? Which operator gives the best quality?
+d. Obtain the effect plots for both the factors along-with interaction plot and interpret them.
+e. Does the effect of three cycle time on response differ significantly?
+f. Test the hypothesis performance of first operator = average performance of the other two operator.
+
+2. The effective life of tool installed a numerically controlled machine is thought to be affected the cutting speed and tool angle. Three speeds and three angles are selected and two replicates of each experiment are run. The data from this experiment is as follows.
+
+| Tool angle (in degrees) | Cutting speed 125 (inches/min) | Cutting speed 150 (inches/min) | Cutting speed 175 (inches/min) |
+| --- | --- | --- | --- |
+| 15 | -1, -1 | -3, 0 | 2, 3 |
+| 20 | 0, 2 | 1, 3 | 4, 6 |
+| 25 | -1, 0 | 5, 6 | 0, -1 |
+
+Using appropriate model analyze the data.

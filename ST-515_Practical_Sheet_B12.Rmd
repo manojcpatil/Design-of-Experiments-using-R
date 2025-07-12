@@ -1,0 +1,36 @@
+---
+title: "ST-515 (A) Practical Sheet"
+author: "Manoj C. Patil"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+
+## Practical Sheet (B12)
+
+**Topic: Analysis of random effect model**
+
+a. Several ovens in a metal working shop are used to heat metal specimens. All the ovens are supposed to operate at the same temperature, although it is suspected that this may not be true. Three ovens are selected at random and their temperatures on successive heats are noted. The data collected are as follows.
+
+| Oven |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 491.5 | 498.3 | 498.1 | 493.5 | 493.6 |  |
+| 2 | 488.5 | 484.65 | 479.9 | 477.35 |  |  |
+| 3 | 490.1 | 484.8 | 488.25 | 473.0 | 471.85 | 478.65 |
+
+a. Is there any significant variation in temperature between ovens?
+b. Estimate the components of variance for this model.
+
+b. A manufacturer suspects that the batches of raw material furnished by her supplier differ significantly in calcium contents. There are a large number of batches currently in the warehouse. Five of these are randomly selected for study. A chemist makes five determinations on each batch and obtains the following data.
+
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| Batch 1 | 23.46 | 23.48 | 23.58 | 23.39 | 23.40 |
+| Batch 2 | 23.59 | 23.46 | 23.42 | 23.49 | 23.50 |
+| Batch 3 | 23.51 | 23.64 | 23.48 | 23.52 | 23.49 |
+| Batch 4 | 23.28 | 23.40 | 23.37 | 23.46 | 23.39 |
+| Batch 5 | 23.29 | 23.46 | 23.37 | 23.32 | 23.38 |
+
+a. Is there any significant variation in calcium content from batch to batch?
+b. Estimate the components of variation.
+c. Analyze the residuals from the experiment. Are the analysis of variance assumptions satisfied?

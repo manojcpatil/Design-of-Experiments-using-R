@@ -1,0 +1,39 @@
+---
+title: "ST-515 (A) Practical Sheet"
+author: "Manoj C. Patil"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+
+## Practical Sheet (B5)
+
+**Topic: Analysis of covariance for one way and two ways classified data**
+
+1. Consider a study performed to determine if there is difference in strength of a monofilament fiber by three different machines. However the strength of a fiber being related to the diameter with the thicker fiber being generally stronger than thinner fiber. A random sample of five fibers is selected from each machine. The fiber strength Y and the corresponding diameter (X) for each specimens are as follows.
+
+| Machine | 1 | 2 | 3 | 4 | 5 |
+| --- | --- | --- | --- | --- | --- |
+| I | 36, 20 | 41, 25 | 39, 24 | 42, 25 | 49, 32 |
+| II | 40, 22 | 48, 28 | 39, 22 | 45, 30 | 44, 28 |
+| III | 35, 21 | 37, 23 | 42, 26 | 34, 21 | 32, 15 |
+
+a. Analyze the data to test whether the information on variable useful.
+b. Obtain the estimate of the covariate parameter (regressor parameter).
+c. Obtain an unbiased estimator of error variance.
+d. Obtain BLUE of any one estimable parametric function and estimate its variance.
+
+2. In a feeding trial sixteen cows were fed on the same ration for a control period of three weeks and then for a further period of seventeen weeks on four different treatments. The treatments are allotted randomly to the cows which are divided in four blocks B, C, D, E. The average weekly milk yields in pounds for the control period (X) and the experimental period (Y) are given below.
+
+| Diet | B | C | D | E |
+| --- | --- | --- | --- | --- |
+| Control | 279, 223 | 208, 172 | 245, 224 | 212, 164 |
+| Dried grass | 197, 179 | 157, 156 | 250, 232 | 208, 166 |
+| Molassed silage | 269, 269 | 183, 183 | 256, 256 | 204, 204 |
+| A.I.V. Fodder | 342, 247 | 208, 150 | 210, 159 | 274, 210 |
+
+a. Use appropriate model to analyze the data.
+b. Obtain an estimate of the regressor parameter and its variance.
+c. Does the information on variable useful in analysis of the data?
+d. Which diet on an average gives maximum average weekly milk yield?
+e. Obtain BLUE of any one contrast in treatment effects and estimate of its variance.

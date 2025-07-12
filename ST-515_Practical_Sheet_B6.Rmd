@@ -1,0 +1,35 @@
+---
+title: "ST-515 (A) Practical Sheet"
+author: "Manoj C. Patil"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+
+## Practical Sheet (B6)
+
+**Topic: Analysis of two-level factorial designs**
+
+1. The following are the yield in Kgs per plot of asparagus which had been subjected to all combinations of the three fertilizers, nitrogen (n), phosphate (p) and potash (k) each at two levels. The experiment is run in 4 replicates and eight blocks such that in each replicate the treatment npk is confounded. The results are as follows.
+
+| Treatment | (1) | n | p | np | k | nk | pk | npk |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Replicate I | 13.9 | 12.7 | 14.6 | 12.8 | 16.2 | 10.2 | 13.8 | 12.0 |
+| Replicate II | 14.7 | 10.8 | 8.9 | 9.3 | 8.3 | 8.8 | 9.0 | 10.3 |
+| Replicate III | 12.7 | 12.1 | 15.2 | 10.3 | 13.3 | 11.3 | 13.0 | 11.5 |
+| Replicate IV | 10.5 | 9.3 | 11.7 | 9.1 | 10.4 | 8.2 | 13.5 | 11.4 |
+
+1. Generate appropriate design and analyze the above data.
+2. Obtain the main effect plot and interaction plot. Suggest the combination of nitrogen, phosphate, and potash that gives the maximum yield.
+3. Do the yields from eight blocks differ significantly?
+
+2. An experiment was performed to improve the yield of a chemical process. Four factors were selected, and two replicates of the factorial experiment were run. The results are as shown in the following table.
+
+| Treatment | (1) | a | b | ab | c | ac | bc | abc | d | ad | bd | abd | cd | acd | bcd | abcd |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Replicate I | 90 | 74 | 81 | 83 | 77 | 81 | 88 | 73 | 98 | 72 | 87 | 85 | 99 | 79 | 87 | 80 |
+| Replicate II | 93 | 78 | 85 | 80 | 78 | 80 | 82 | 70 | 95 | 76 | 83 | 86 | 90 | 75 | 84 | 80 |
+
+i. Estimate all the factor effects and prepare an analysis of variance table to determine which factors are important in explaining the yield.
+j. Compare the main and interaction effects of all the factors graphically.
+k. Assuming that all the two factor interactions with factor D, three factor interactions and highest order interaction to be negligible, analyze the data.

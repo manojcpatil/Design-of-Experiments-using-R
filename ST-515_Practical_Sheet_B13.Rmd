@@ -1,0 +1,40 @@
+---
+title: "ST-515 (A) Practical Sheet"
+author: "Manoj C. Patil"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+
+## Practical Sheet (B13)
+
+**Topic: Analysis of Taguchi designs**
+
+c. Using Minitab, generate 2-level, 3-level, mixed levels Taguchi designs.
+
+d. You manufacture golf balls and are working on a new design to maximize ball flight distance. You have identified four control factors, each with two levels:
+
+- Core material (liquid vs. tungsten)
+- Core diameter (118 vs. 156)
+- Number of dimples (392 vs. 422)
+- Cover thickness (.03 vs. .06)
+
+You also want to test the interaction between core material and core diameter. The response is ball flight distance in feet. The noise factor is two types of golf clubs: driver and a 5-iron. The distance is measured for each club type. The data is stored in golfball.mtw worksheet.
+
+a) Analyze the data and interpret the results with appropriate graphs.
+b) Identify the settings of the controllable factors which maximize the response.
+
+e. Engel on an experiment to improve an injection molding process. The goal was to determine process parameter settings for which percentage shrinkage would be consistently close to a target value. The control factors are cycle time (A), mold temperature (B), cavity thickness (C), holding pressure (D), injection speed (E), holding time (F) and gate size (G). The noise factors are percentage regrind (a), moisture content (b), and ambient temperature (c). The experiment used cross array with a L8 design for the noise array. The design matrix and the % shrinkage data are given below.
+
+| A | B | C | D | E | F | G | (1) | bc | ac | ab |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| - | - | - | - | - | - | - | 2.2 | 2.1 | 2.3 | 2.3 |
+| - | - | - | + | + | + | + | 0.3 | 2.5 | 2.7 | 0.3 |
+| - | + | + | - | - | + | + | 0.5 | 3.1 | 0.4 | 2.8 |
+| - | + | + | + | + | - | - | 2 | 1.9 | 1.8 | 2 |
+| + | - | + | - | + | - | + | 3 | 3.1 | 3 | 3 |
+| + | - | + | + | - | + | - | 2.1 | 4.2 | 1 | 3.1 |
+| + | + | - | - | + | + | - | 4 | 1.9 | 4.6 | 2.2 |
+| + | + | - | + | - | - | + | 2 | 1.9 | 1.9 | 1.8 |
+
+Analyze the data. Determine the control factor settings that are effective for reducing variation.

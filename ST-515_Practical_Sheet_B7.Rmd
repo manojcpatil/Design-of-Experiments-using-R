@@ -1,0 +1,47 @@
+---
+title: "ST-515 (A) Practical Sheet"
+author: "Manoj C. Patil"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+
+## Practical Sheet (B7)
+
+**Topic: Analysis of 2-level factorial designs with complete or partially confounded treatments**
+
+1. An experiment was conducted on a chemical process that produces a polymer. The four factors temperature (A), catalyst concentration (B), time (C) and pressure (D) each at two levels were studied. The observed responses of viscosity for the runs (in standard order) in a factorial experiment are as given below.
+
+| Treatment | (1) | a | b | ab | c | ac | bc | abc | d | ad | bd | abd | cd | acd | bcd | abcd |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Viscosity | 1400 | 1500 | 1520 | 1630 | 1380 | 1525 | 1500 | 1620 | 1400 | 1525 | 1500 | 1500 | 1420 | 1490 | 1500 | 1600 |
+
+a. Assuming that the highest order interaction is confounded with the blocks analyze the data.
+b. Obtain the main effects plot and comment on it.
+
+2. Consider the following data for factorial design.
+
+| Treatment | (1) | a | b | ab | c | ac | bc | abc | d | ad | bd | abd | cd | acd | bcd | abcd |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Replicate I | 90 | 74 | 81 | 83 | 77 | 81 | 88 | 73 | 98 | 72 | 87 | 85 | 99 | 79 | 87 | 80 |
+| Replicate II | 93 | 78 | 85 | 80 | 78 | 80 | 82 | 70 | 95 | 76 | 83 | 86 | 90 | 75 | 84 | 80 |
+
+c. Assuming that the treatment ABCD confounded in replicate I and ABC confounded in replicate II perform the statistical analysis of the above design.
+d. Also obtain effects of the confounded treatment combination.
+
+3. We have two replicates of 2^4 factorial experiment with two blocks per replicate each of size is 4. Given below are responses to different treatment combinations tried in different blocks.
+
+|  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Replicate I Block I | np | 32.6 | (1) | 2.5 | npkd | 40.3 | kd | 28 |
+| Replicate I Block II | nk | 34.4 | pd | 27.8 | nd | 31.7 | pk | 24.6 |
+| Replicate II Block III | npk | 33.1 | n | 29.4 | p | 27 | k | 20.5 |
+| Replicate II Block IV | nkd | 35.9 | d | 26.1 | pkd | 33.9 | npd | 32.7 |
+| Replicate II Block I | (1) | 22.4 | np | 27.8 | kd | 26.4 | nk | 27.1 |
+| Replicate II Block II | npkd | 39.2 | pk | 33.4 | nd | 32 | pd | 31.4 |
+| Replicate II Block III | nkd | 38.2 | d | 29.4 | npk | 35.2 | n | 30.5 |
+| Replicate II Block IV | pkd | 33.5 | p | 30 | npd | 31.3 | k | 26.3 |
+
+a. Identify the confounded effects and give estimates of other effects.
+b. Obtain ANOVA table and write comments on it.
+c. Obtain the main and interaction effect plots and interpret them.

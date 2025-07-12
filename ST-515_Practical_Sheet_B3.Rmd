@@ -1,0 +1,31 @@
+---
+title: "ST-515 (A) Practical Sheet"
+author: "Manoj C. Patil"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+
+## Practical Sheet (B3)
+
+**Topic: Analysis of two-way classification model with unequal observations per cell**
+
+1. In an investigation carried out by Remington and Schork for studying the effect of smoking on physical activity, 21 individuals were classified into one of the three groups by smoking history and randomly assigned to one of the three stress tests: i. bicycle ergometer ii) treadmill iii) step test. The time until maximum oxygen uptake was recorded in minutes. The data given is as follows.
+
+| Smoking History | B1 Bicycle | B2 Treadmill | B3 Step |
+| --- | --- | --- | --- |
+| A1 None | 12.8, 13.5, 11.2 | 16.2, 17.8 | 22.6, 19.3, 18.9 |
+| A2 Moderate | 10.9 | 15.5, 13.8, 16.2 | 21.0, 15.9 |
+| A3 Heavy | 9.2, 7.5 | 13.2, 8.1 | 16.2, 16.1, 17.8 |
+
+Analyze the data without assuming an interaction term in the model between the two factors smoking history and stress test.
+
+2. An experiment was conducted to determine if either firing temperature or furnace position affects the baked density of a carbon anode. The data is as given below.
+
+| Position | Temperature 800 (in degree Celsius) | Temperature 825 (in degree Celsius) | Temperature 850 (in degree Celsius) |
+| --- | --- | --- | --- |
+| 1 | 570, 565 | 1063, 1080, 1043 | 565 |
+| 2 | 528, 547, 521 | 988 | 526, 538 |
+| 3 | 610, 592 | 1026, 1004 | 510, 590, 532 |
+
+Conduct the analysis of variance and test the hypothesis on main effects.
