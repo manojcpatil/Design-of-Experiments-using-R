@@ -24,6 +24,7 @@ This project provides resources and R code for designing and analyzing experimen
 Explore the project on GitHub, where you can find the source code, datasets, and detailed documentation.
 
 [Visit GitHub Repository](https://github.com/manojcpatil/Design-of-Experiments-using-R)
+[View Practical Sheet](https://github.com/manojcpatil/Design-of-Experiments-using-R/blob/main/ST-515_Practical_Sheet_B1.md)
 
 ## Resources
 
