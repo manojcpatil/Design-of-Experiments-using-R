@@ -2,7 +2,7 @@
 title: "Analysis of one way/two-way classification models"
 author: "Manoj C. Patil"
 date: "`r Sys.Date()`"
-output: word_document
+output: github_document
 ---
 
 
