@@ -17,7 +17,7 @@ area was measured in mm.
 
 Analyze the data using appropriate design.
 
-## Step 1: Load and Prepare Data
+### Step 1: Load and Prepare Data
 
 ``` r
 library('readxl')
@@ -36,7 +36,7 @@ data$Temp <- factor(data$Temp, levels = 1:2, labels = c("10C", "16C"))
 data$Oxygen <- factor(data$Oxygen, levels = 1:3, labels = c("2%", "6%", "10%"))
 ```
 
-## Step 2: Explore the Data
+### Step 2: Explore the Data
 
 ``` r
 summary(data)
@@ -83,7 +83,7 @@ Rot appear less pronounced, indicating a potentially weaker effect.
 These visualizations suggest that Bacteria and Temp are likely to be
 significant predictors, while Oxygen may have a more subtle influence.
 
-## Step 3: Fit Full Factorial ANOVA Model
+### Step 3: Fit Full Factorial ANOVA Model
 
 ``` r
 # 3-way factorial design
@@ -115,7 +115,7 @@ Temp:Oxygen, and Bacteria:Temp:Oxygen) are not statistically significant
 (p \> 0.05), suggesting that Oxygen does not have a substantial impact
 on Rot in this model, nor do its interactions with other factors.
 
-## Step 4: Check Assumptions
+### Step 4: Check Assumptions
 
 ``` r
 # Residual diagnostics
@@ -154,7 +154,7 @@ leveneTest(Rot ~ Bacteria * Temp * Oxygen, data = data)
 
 ### Conclusions: Write some conclusions here
 
-## Step 5: Interpret Significant Effects
+### Step 5: Interpret Significant Effects
 
 ``` r
 # Use interaction plots to visualize interactions
@@ -271,7 +271,7 @@ variances across groups are homogeneous, as the p-value is well above
 homogeneity of variances are met, supporting the validity of the ANOVA
 results.
 
-## Step 6: Simplify Model (if interactions are not significant)
+### Step 6: Simplify Model (if interactions are not significant)
 
 ``` r
 # Fit reduced model if interactions are not significant
@@ -300,7 +300,7 @@ anova(model_reduced, model)
     ## 1     48 1109.33                           
     ## 2     36  843.33 12       266 0.9462 0.5144
 
-## Step 7: Report Final Model
+### Step 7: Report Final Model
 
 ``` r
 # Final model summary and estimated effects
