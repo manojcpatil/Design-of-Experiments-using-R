@@ -1,0 +1,150 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design of Experiments using R</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-blue-600 text-white py-6">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center">Design of Experiments using R</h1>
+            <p class="text-center mt-2 text-lg">A Comprehensive Guide to Statistical Experimentation with R</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Project Overview -->
+        <section class="mb-12 fade-in">
+            <h2 class="text-3xl font-semibold mb-4">Project Overview</h2>
+            <p class="text-gray-700 leading-relaxed">
+                This project provides resources and R code for designing and analyzing experiments using statistical methods. 
+                It covers key concepts in Design of Experiments (DOE), including factorial designs, response surface methodology, 
+                and more, implemented using the R programming language.
+            </p>
+        </section>
+
+        <!-- Key Features -->
+        <section class="mb-12 fade-in">
+            <h2 class="text-3xl font-semibold mb-4">Key Features</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>R scripts for factorial and fractional factorial designs</li>
+                <li>Implementation of ANOVA and regression analysis for DOE</li>
+                <li>Examples of response surface methodology</li>
+                <li>Visualization tools for experimental data</li>
+                <li>Comprehensive documentation and tutorials</li>
+            </ul>
+        </section>
+
+        <!-- Get Started -->
+        <section class="mb-12 fade-in">
+            <h2 class="text-3xl font-semibold mb-4">Get Started</h2>
+            <p class="text-gray-700 mb-4">
+                Explore the project on GitHub, where you can find the source code, datasets, and detailed documentation.
+            </p>
+            <a href="https://github.com/manojcpatil/Design-of-Experiments-using-R" 
+               class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+               Visit GitHub Repository
+            </a>
+        </section>
+
+        <!-- Resources -->
+        <section class="mb-12 fade-in">
+            <h2 class="text-3xl font-semibold mb-4">Resources</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li><a href="https://www.r-project.org/" class="text-blue-600 hover:underline">Official R Project</a></li>
+                <li><a href="https://cran.r-project.org/web/packages/DoE.base/index.html" class="text-blue-600 hover:underline">DoE.base R Package</a></li>
+                <li><a href="https://www.statmethods.net/" class="text-blue-600 hover:underline">Quick-R: Statistics with R</a></li>
+            </ul>
+        </section>
+
+        <!-- Contact -->
+        <section class="fade-in">
+            <h2 class="text-3xl font-semibold mb-4">Contact</h2>
+            <p class="text-gray-700">
+                For questions or contributions, feel free to open an issue on the GitHub repository or contact the project maintainer.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Design of Experiments using R. All rights reserved.</p>
+            <p class="mt-2">Maintained by <a href="https://github.com/manojcpatil" class="text-blue-400 hover:underline">Manoj C. Patil</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Fade-in Animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(element => observer.observe(element));
+        });
+    </script>
+</body>
+</html>
